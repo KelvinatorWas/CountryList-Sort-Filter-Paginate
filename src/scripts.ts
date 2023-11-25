@@ -1,8 +1,9 @@
-import $ from 'jquery';
-import sum from './utils/sum/sum';
+import { appendChildern, createElement } from "./utils/sum/helperFuncs";
 
-console.log('Ready for coding');
+class CountryList {
 
-console.log('Body jQuery node:', $('body'));
-console.log('Body javascript node:', document.querySelector('body'));
-console.log('2 + 3 =', sum(2, 3));
+
+}
+
+
+new CountryList();
