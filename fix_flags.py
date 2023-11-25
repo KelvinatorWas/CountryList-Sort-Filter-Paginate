@@ -2,7 +2,7 @@ import json
 
 file_path = "./db.json"
 flag_type = 'flat' # could also be 'shiny'
-size = 64 # flag size pixels aka 64px by 64px
+size = 64 # flag size pixels aka 64px by 64px indeed
 
 with open(file_path, 'r') as file:
     data_base = json.load(file)
