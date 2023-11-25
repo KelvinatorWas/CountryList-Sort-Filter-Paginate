@@ -1,24 +1,32 @@
 import axios from 'axios';
 import { appendChildern, createElement } from './utils/sum/helperFuncs';
 
+// Types
+
+type Currency = {
+  code: string;
+  name: string;
+  symbol: string;
+};
+
+type Language = {
+  code: string;
+  name: string;
+};
+
 type CountryData = {
   name: string;
   code: string;
   capital: string;
   region: string;
-  currency: {
-    code: string;
-    name: string;
-    symbol: string;
-  };
-  language: {
-    code: string;
-    name: string;
-  };
+  currency: Currency;
+  language: Language;
   flag: string;
   dialling_code: string;
   isoCode: string;
 };
+
+// Class Country List
 
 class CountryList {
   private countryListWrapper: HTMLElement | null;
@@ -32,8 +40,12 @@ class CountryList {
     this.init();
   }
 
-  private init() {
+  private async init() {
     this.initHeader();
+
+    const data = await this.fetchData();
+
+    console.log(data[0]);
   }
 
   private initHeader() {
@@ -76,12 +88,13 @@ class CountryList {
     appendChildern(grid, makeInput('Nosaukums'), makeInput('Galvas pilsēta'), makeInput('Valūta'), makeInput('Valoda'));
   }
 
-  private async fetchData() {
+  private async fetchData():Promise<CountryData[]> {
     try {
-      const data = await axios.get('http://localhost:3004/countries');
-      return data;
+      const data = await axios.get<CountryData[]>('http://localhost:3004/countries');
+      return data.data;
     } catch (error) {
       console.log('Error while trying to fetch data:', error);
+      return [];
     }
   }
 }
