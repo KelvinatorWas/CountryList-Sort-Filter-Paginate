@@ -45,7 +45,7 @@ const createTh = (title:string, img = ''): HTMLElement => {
 // Class Country List
 
 class CountryList {
-  private countryListWrapper: HTMLElement | null;
+  private countryListWrapper: HTMLElement;
   private maxTableAmount: number;
   private page = 1;
   private dataSize = 0;
