@@ -3,8 +3,19 @@ body {
 
   & {
     box-sizing: border-box;
-    font-family: 'Roboto Condensed';    ;
+    font-family: 'Roboto Condensed';
   }
+}
+
+.table thead {
+  background-color: #c9c9c9;
+}
+
+.table thead td, .table thead th {
+  border-width: 0 0 2px;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .center-wrapper {
@@ -15,8 +26,7 @@ body {
 .country-list-wrapper {
   display: flex;
   flex-direction: column;
-  width: 1280px;
-  height: 1080px; 
+  width: 1280px; 
   background-color: #605a97;
   align-content: center;
   padding: 32px;
@@ -99,4 +109,27 @@ body {
   border-radius: 16px;
   width: 100%;
   height: 100%;
+  padding: 16px;
+}
+
+.country-wrapper {
+  display:flex;
+  flex-direction: row;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.paginate-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.page-button {
+  margin-top: 16px;
+  padding: 8px 12px;
+  background-color: transparent;
+  font-weight: 1000;
+  font-size: 32px;
+  border-radius: 16px;
 }
