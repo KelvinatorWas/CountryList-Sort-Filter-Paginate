@@ -161,6 +161,7 @@ class CountryList {
   private searchListener(searchButton:HTMLInputElement) {
     if (searchButton) {
       searchButton.addEventListener('click', async (event) => {
+        this.page = 1;
         event.preventDefault();
         this.updateTable();
       });

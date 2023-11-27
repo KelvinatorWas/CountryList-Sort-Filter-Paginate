@@ -1,4 +1,4 @@
-import json
+import json, requests
 
 file_path = "./db.json"
 flag_type = 'shiny' # could also be 'shiny'
