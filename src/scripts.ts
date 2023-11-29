@@ -188,7 +188,6 @@ class CountryList {
 
     const tableBody = (table:HTMLElement) => {
       const tbody = createElement('tbody');
-      console.log(data);
 
       for (let i = 0; i < this.maxTableAmount; i += 1) {
         const trBody = createElement('tr');
@@ -239,7 +238,6 @@ class CountryList {
       const link = `http://localhost:3004/countries?${test}_page=${this.page}&_limit=${this.maxTableAmount}`;
       const data = await axios.get<CountryData[]>(link);
       this.dataSize = data.data.length / 20;
-      console.log(link);
       return data.data;
     } catch (error) {
       console.log('Error while trying to fetch data:', error);
